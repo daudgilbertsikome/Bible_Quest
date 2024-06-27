@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Wood and Paper UI/Mobile Buttons/Mobile Buttons/4.png" type="Texture" id=1]
+[ext_resource path="res://assets/Wood and Paper UI/Mobile Buttons/Mobile Buttons/2.png" type="Texture" id=2]
+[ext_resource path="res://assets/Wood and Paper UI/Mobile Buttons/Mobile Buttons/7.png" type="Texture" id=3]
+[ext_resource path="res://assets/Wood and Paper UI/Mobile Buttons/Mobile Buttons/3.png" type="Texture" id=4]
+
+[node name="MobileControl" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0.392157 )
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_right = 40.0
+
+[node name="left" type="TouchScreenButton" parent="Control"]
+position = Vector2( 16, -17 )
+scale = Vector2( 1.53571, 1.53571 )
+normal = ExtResource( 4 )
+passby_press = true
+action = "gerak_kiri"
+
+[node name="right" type="TouchScreenButton" parent="Control"]
+position = Vector2( 70, -17 )
+scale = Vector2( 1.57143, 1.53571 )
+normal = ExtResource( 1 )
+passby_press = true
+action = "gerak_kanan"
+
+[node name="jump" type="TouchScreenButton" parent="Control"]
+position = Vector2( 411, -64 )
+scale = Vector2( 1.64286, 1.60714 )
+normal = ExtResource( 2 )
+passby_press = true
+action = "lompat"
+
+[node name="dash" type="TouchScreenButton" parent="Control"]
+position = Vector2( 361, -21 )
+scale = Vector2( 1.5, 1.53571 )
+normal = ExtResource( 3 )
+passby_press = true
+action = "lari_cepat"

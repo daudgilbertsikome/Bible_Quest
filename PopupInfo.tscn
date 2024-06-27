@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://TombolFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://PopupInfo.gd" type="Script" id=2]
+[ext_resource path="res://TombolPopup.tres" type="StyleBox" id=3]
+[ext_resource path="res://TombolFontInfo.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/jelek/info.png" type="Texture" id=5]
+[ext_resource path="res://sounds/pepSound2.ogg" type="AudioStream" id=6]
+[ext_resource path="res://sounds/switch23.ogg" type="AudioStream" id=7]
+
+[node name="PopupInfo" type="CenterContainer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 358.0
+margin_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 5 )
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 101.0
+margin_top = 45.0
+margin_right = 257.0
+margin_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_constants/separation = 8
+alignment = 1
+
+[node name="LabelInfo" type="Label" parent="VBoxContainer"]
+margin_right = 156.0
+margin_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = ExtResource( 4 )
+text = "ISI INFORMASI
+AAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAA
+ASA
+AAAAAAAAAAAAAaaaaaaaaaaaaa"
+valign = 1
+uppercase = true
+
+[node name="ButtonOk" type="Button" parent="VBoxContainer"]
+margin_top = 95.0
+margin_right = 156.0
+margin_bottom = 117.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 3 )
+custom_styles/disabled = ExtResource( 3 )
+custom_styles/normal = ExtResource( 3 )
+text = "Ok"
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="suarainfo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = 14.182
+bus = "Music"
+
+[node name="SoundTombol" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+bus = "Music"
+
+[connection signal="pressed" from="VBoxContainer/ButtonOk" to="." method="_on_ButtonOk_pressed"]

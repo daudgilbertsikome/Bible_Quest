@@ -1,0 +1,184 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://TilesetPadat.tres" type="TileSet" id=1]
+[ext_resource path="res://TombolFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Tentang.tscn" type="PackedScene" id=3]
+[ext_resource path="res://TombolFont1.tres" type="DynamicFont" id=4]
+[ext_resource path="res://TombolPopup.tres" type="StyleBox" id=5]
+[ext_resource path="res://assets/Wood and Paper UI/Prefabs/8.png" type="Texture" id=6]
+[ext_resource path="res://assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" type="Texture" id=7]
+[ext_resource path="res://CanvasLayer.gd" type="Script" id=8]
+[ext_resource path="res://music/Retro Beat.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/sound_on16x16.png" type="Texture" id=10]
+[ext_resource path="res://TombolVolume.gd" type="Script" id=11]
+[ext_resource path="res://sounds/switch23.ogg" type="AudioStream" id=12]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 6 )
+normal_map = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 96, 96 )
+
+[node name="Title" type="Node2D"]
+position = Vector2( 2, 0 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 126.0
+margin_top = 5.0
+margin_right = 364.0
+margin_bottom = 89.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 59.0
+margin_top = 18.0
+margin_right = 181.0
+margin_bottom = 66.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "BIBLE QUEST"
+align = 1
+valign = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 4
+format = 1
+
+[node name="Background" type="Sprite" parent="TileMap"]
+position = Vector2( 243, 126.5 )
+scale = Vector2( 1.03333, 1.04044 )
+z_index = -1
+texture = ExtResource( 7 )
+
+[node name="CanvasLayerMenu" type="CanvasLayer" parent="."]
+script = ExtResource( 8 )
+
+[node name="Tentang" parent="CanvasLayerMenu" instance=ExtResource( 3 )]
+margin_left = -117.0
+margin_top = -390.0
+margin_right = 118.0
+margin_bottom = -182.0
+
+[node name="CaraBermain" parent="CanvasLayerMenu" instance=ExtResource( 3 )]
+margin_left = -117.0
+margin_top = -390.0
+margin_right = 118.0
+margin_bottom = -182.0
+
+[node name="Kredit" parent="CanvasLayerMenu" instance=ExtResource( 3 )]
+margin_left = -117.0
+margin_top = -390.0
+margin_right = 118.0
+margin_bottom = -182.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayerMenu"]
+margin_left = 172.0
+margin_top = 83.0
+margin_right = 319.0
+margin_bottom = 209.0
+
+[node name="TombolMulai" type="Button" parent="CanvasLayerMenu/VBoxContainer"]
+margin_right = 147.0
+margin_bottom = 22.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+text = "Mulai"
+
+[node name="TombolTentang" type="Button" parent="CanvasLayerMenu/VBoxContainer"]
+margin_top = 26.0
+margin_right = 147.0
+margin_bottom = 48.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+text = "Tentang"
+
+[node name="TombolCaraBermain" type="Button" parent="CanvasLayerMenu/VBoxContainer"]
+margin_top = 52.0
+margin_right = 147.0
+margin_bottom = 74.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+text = "Cara Bermain"
+
+[node name="TombolKredit" type="Button" parent="CanvasLayerMenu/VBoxContainer"]
+margin_top = 78.0
+margin_right = 147.0
+margin_bottom = 100.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+text = "Kredit"
+
+[node name="TombolKeluar" type="Button" parent="CanvasLayerMenu/VBoxContainer"]
+margin_top = 104.0
+margin_right = 147.0
+margin_bottom = 126.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+text = "Keluar"
+
+[node name="Tween" type="Tween" parent="CanvasLayerMenu"]
+
+[node name="SoundTombol" type="AudioStreamPlayer2D" parent="CanvasLayerMenu"]
+stream = ExtResource( 12 )
+
+[node name="BackMusic" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="MusicMenuUtama" type="AudioStreamPlayer" parent="BackMusic"]
+stream = ExtResource( 9 )
+autoplay = true
+bus = "Music"
+
+[node name="TombolVolume" type="Button" parent="BackMusic"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 445.0
+margin_top = -14.0
+margin_right = 468.0
+margin_bottom = 8.0
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+toggle_mode = true
+text = "Sound"
+icon = ExtResource( 10 )
+clip_text = true
+script = ExtResource( 11 )
+
+[connection signal="pressed" from="CanvasLayerMenu/VBoxContainer/TombolMulai" to="CanvasLayerMenu" method="_on_TombolMulai_pressed"]
+[connection signal="pressed" from="CanvasLayerMenu/VBoxContainer/TombolTentang" to="CanvasLayerMenu" method="_on_TombolTentang_pressed"]
+[connection signal="pressed" from="CanvasLayerMenu/VBoxContainer/TombolCaraBermain" to="CanvasLayerMenu" method="_on_TombolCaraBermain_pressed"]
+[connection signal="pressed" from="CanvasLayerMenu/VBoxContainer/TombolKredit" to="CanvasLayerMenu" method="_on_TombolKredit_pressed"]
+[connection signal="pressed" from="CanvasLayerMenu/VBoxContainer/TombolKeluar" to="CanvasLayerMenu" method="_on_TombolKeluar_pressed"]
+[connection signal="pressed" from="BackMusic/TombolVolume" to="BackMusic/TombolVolume" method="_on_TombolVolume_pressed"]

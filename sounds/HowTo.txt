@@ -1,0 +1,19 @@
+Installation instructions... 
+
+Drag and drop plugin into Plugins Folder
+Drag and drop Sound effects into \audio\se
+This plugin uses Terrain Tags to check which surface the character is walking on.
+
+1: 'grass',
+2: 'dirt',
+3: 'stone',
+4: 'sand',
+
+Go to Database > Tileset > Choose the tileset you are using, Click on Terrain Tag on the right, and assign 
+The terrain tags to the tiles you wish to have the corrosponding sounds attached too. 1 for grass, 2 for dirt etc.
+
+Start the game, 
+
+If you need anymore assistance, please get in touch!
+
+- AngryMaxmius
